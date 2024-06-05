@@ -1,20 +1,20 @@
-# from fastapi import FastAPI
-# from schemas.series import Series 
-# from sessions.series import add_series, get_all_series
+from fastapi import FastAPI
+from schemas import Series 
+from session import add_series, get_all_series
 
-# app = FastAPI()
+app = FastAPI()
 
-# @app.get("/all")
-# def all():
-#     movies = get_all_movies()
-#     if not movies:
-#         return {"message": "No results"}
-#     return movies
+@app.get("/all")
+def all():
+    movies = get_all_movies()
+    if not movies:
+        return {"message": "No results"}
+    return movies
 
-<<<<<<< HEAD
-# @app.post("/add-movie")
-# def add(movie: Series):
-#     return add_movie(movie.name, movie.image, movie.year, movie.url)
+
+@app.post("/add-movie")
+def add(movie: Series):
+    return add_movie(movie.name, movie.image, movie.year, movie.url)
 =======
 @app.post("/add-movie")
 def add(movie: International):
