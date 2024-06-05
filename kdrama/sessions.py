@@ -5,7 +5,7 @@ from model import Kdrama
 
 def add_movie(name, date,description, image_link, url):
     with Session(engine) as session:
-        kdrama = Kdrama(name=name, date=date , description=description, image_link=image_link , url=url)
+        kdrama = Kdrama(name=name, date=date , description=description, image_link=image_link , download_link=url)
         session.add(kdrama)
         session.commit()
         return "Movie added to database"
